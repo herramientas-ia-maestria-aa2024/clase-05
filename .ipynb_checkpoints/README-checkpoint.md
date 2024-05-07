@@ -18,8 +18,6 @@
 
 * Se ejemplifica el uso del modelo previo generado, desde una aplicación web usando la librería **Flask**
 
-  <video src="https://github.com/herramientas-ia-maestria/tmp-files/raw/main/uso-flask-modelo-ia.mp4" width="320" height="240" controls allow="autoplay;"></video>
+   
 
-<video controls>
-<source src="https://github.com/herramientas-ia-maestria/tmp-files/raw/main/uso-flask-modelo-ia.mp4" type="video/mp4">
-</video>
+![Flask-Python](https://raw.githubusercontent.com/herramientas-ia-maestria/tmp-files/main/demo-video-gif.gif)  
