@@ -3,16 +3,17 @@ from metodos import load_models, predict
 
 app = Flask(__name__)
 
-@app.route('/prediccion', methods=['POST', 'GET'])
+@app.route('/prediccion/<string:mensaje>', methods=['POST', 'GET'])
 def prediccion(mensaje=None):
     """
     """
-    mensaje = request.args.get('mensaje')
+    # mensaje = request.args.get('mensaje')
     print(mensaje)
 
     vectoriser, LRmodel = load_models()
     valor = predict(vectoriser, LRmodel, mensaje)
-    return jsonify({'prediction': valor})
+
+    return jsonify({'prediction': valor[1]})
 
 
 @app.route('/', methods=('GET', 'POST'))
@@ -26,7 +27,7 @@ def prediccion_formulario():
             vectoriser, LRmodel = load_models()
             tipo_prediccion, valor_prediccion = predict(vectoriser, LRmodel, mensaje)
         else:
-            valor_prediccion = "Sin procesar"        
+            valor_prediccion = "Sin procesar"
     return render_template('index.html', valor_prediccion=valor_prediccion,
                            tipo_prediccion=tipo_prediccion)
 
